@@ -69,4 +69,11 @@ export class RedditsPage implements OnInit {
     this.getPosts(this.category, this.limit);
   }
 
+  refresh(refreshEvent) {
+    this.getPosts(this.category, this.limit);
+    setTimeout(() => {
+      refreshEvent.complete();
+    }, 200);
+  }
+
 }
